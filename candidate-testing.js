@@ -36,14 +36,14 @@ function askQuestion() {
 function gradeQuiz(candidateAnswers) {
  
 let grade = 0;
-let correctAnswer = 0;
+let correctAnswerCounter = 0;
   for (let i = 0; i < correctAnswers.length; i++) {
     if (candidateAnswers[i].toLowerCase().includes(correctAnswers[i].toLowerCase())) {
       console.log(`${i + 1}) ${questions[i]}`);
       console.log(`You answered: ${candidateAnswers[i]}`);;
       console.log(`That is correct!`);
       console.log(`\n`);
-      correctAnswer++
+      correctAnswerCounter++
     } else {
       console.log(`${i + 1}) ${questions[i]}`);
       console.log(`You answered: ${candidateAnswers[i]}`);
@@ -52,9 +52,9 @@ let correctAnswer = 0;
     }
   }
   //console.log({correctAnswer})
-  grade = correctAnswer / 5 * 100;
-  console.log(`>>> Overall Grade: ${correctAnswer / 5 * 100}% (${correctAnswer} of 5 responses correct) <<<`);
-  if (correctAnswer / 5 * 100 >= 80) {
+  grade = correctAnswerCounter / 5 * 100;
+  console.log(`>>> Overall Grade: ${grade}% (${correctAnswerCounter} of 5 responses correct) <<<`);
+  if (grade / 5 * 100 >= 80) {
     console.log(`>>> Status: PASSED <<<`);
   } else {
     console.log(`>>> Status: FAILED <<<`);

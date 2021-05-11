@@ -26,9 +26,10 @@ function askQuestion() {
     while (candidateAnswers[i] === "") {
       candidateAnswers[i] = input.question(questions[i]);
     }
-    console.log('\n')
+    console.log('\n');
   }
-  console.log(`Candidate Name: ${candidateName}`)
+  console.log(`Candidate Name: ${candidateName}`);
+  console.log({candidateAnswers});
   //console.log(`---------------------------------------------------\n`);
 }
 
@@ -38,7 +39,7 @@ function gradeQuiz(candidateAnswers) {
  
 
   for (let i = 0; i < correctAnswers.length; i++) {
-    if (correctAnswers[i].toLowerCase().includes(candidateAnswers[i].toLowerCase())) {
+    if (candidateAnswers[i].toLowerCase().includes(correctAnswers[i].toLowerCase())) {
       console.log(`${i + 1}) ${questions[i]}`);
       console.log(`You answered: ${candidateAnswers[i]}`);;
       console.log(`That is correct!`);

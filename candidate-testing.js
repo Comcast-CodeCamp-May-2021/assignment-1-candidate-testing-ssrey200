@@ -41,15 +41,12 @@ console.log({candidateAnswers}, '\n');
     console.log(`${i + 1}) ${questions[i]}`);
     console.log(`You answered: ${candidateAnswers[i]}`);
     if (candidateAnswers[i].toLowerCase() === (correctAnswers[i].toLowerCase())) {
-      console.log(`That is correct!`);
       console.log(`\n`);
       correctAnswerCounter++
     } else {
-      console.log(`Incorrect!`);
       console.log(`\n`);
     }
   }
-  //console.log({correctAnswer})
   grade = correctAnswerCounter / 5 * 100;
   console.log(`>>> Overall Grade: ${grade}% (${correctAnswerCounter} of 5 responses correct) <<<`);
   if (grade / 5 * 100 >= 80) {

@@ -23,13 +23,11 @@ function askQuestion() {
    
   for (let i = 0; i < questions.length; i++) {
     candidateAnswers[i] = input.question(questions[i]);
-    while (candidateAnswers[i] === "") {
-      candidateAnswers[i] = input.question(questions[i]);
-    }
+    // while (candidateAnswers[i] === "") {
+    //   candidateAnswers[i] = input.question(questions[i]);
+    // }
     console.log('\n');
   }
-  console.log(`Candidate Name: ${candidateName}`);
-  console.log({candidateAnswers});
   //console.log(`---------------------------------------------------\n`);
 }
 
@@ -37,16 +35,16 @@ function gradeQuiz(candidateAnswers) {
  
 let grade = 0;
 let correctAnswerCounter = 0;
+console.log(`Candidate Name: ${candidateName}`);
+console.log({candidateAnswers}, '\n');
   for (let i = 0; i < correctAnswers.length; i++) {
-    if (candidateAnswers[i].toLowerCase().includes(correctAnswers[i].toLowerCase())) {
-      console.log(`${i + 1}) ${questions[i]}`);
-      console.log(`You answered: ${candidateAnswers[i]}`);;
+    console.log(`${i + 1}) ${questions[i]}`);
+    console.log(`You answered: ${candidateAnswers[i]}`);
+    if (candidateAnswers[i].toLowerCase() === (correctAnswers[i].toLowerCase())) {
       console.log(`That is correct!`);
       console.log(`\n`);
       correctAnswerCounter++
     } else {
-      console.log(`${i + 1}) ${questions[i]}`);
-      console.log(`You answered: ${candidateAnswers[i]}`);
       console.log(`Incorrect!`);
       console.log(`\n`);
     }
